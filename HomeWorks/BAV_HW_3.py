@@ -116,3 +116,4 @@ my_str = str(my_str)
 for strint in my_str:
     if not strint.isalnum() and strint not in " ":
         print("Value -", strint)
+
