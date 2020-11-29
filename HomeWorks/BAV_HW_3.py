@@ -66,7 +66,7 @@ print(my_str)
 # 6) У вас есть переменная my_str, тип - str. Если ее длинна меньше 5, то допишите в конец строки себя же. Пример:
 # было - "qwer", стало - "qwerqwer". Если длинна не меньше 5, то оставить строку как есть.
 
-my_str = "qwer"
+my_str = "Qwer"
 my_str = str(my_str)
 my_str = my_str + my_str if len(my_str) < 5 else my_str
 print(my_str)
@@ -76,7 +76,7 @@ print(my_str)
 # 7) У вас есть переменная my_str, тип - str. Если ее длинна меньше 5, то допишите в конец строки перевернутую себя же.
 # Пример: было - "qwer", стало - "qwerrewq". Если длинна не меньше 5, то оставить строку как есть.
 
-my_str = "qwer"
+my_str = "Qwer"
 my_str = str(my_str)
 my_str = my_str + my_str[::-1] if len(my_str) < 5 else my_str
 print(my_str)
@@ -91,7 +91,7 @@ my_str = str(my_str)
 
 for strint in my_str:
     if strint.isalnum():
-        print("Value -", strint)
+        print("Value #8 -", strint)
 
 #####################################################
 
@@ -103,7 +103,7 @@ my_str = str(my_str)
 
 for strint in my_str:
     if not strint.isalnum():
-        print("Value -", strint)
+        print("Value #9 -", strint)
 
 #####################################################
 
@@ -115,5 +115,5 @@ my_str = str(my_str)
 
 for strint in my_str:
     if not strint.isalnum() and strint not in " ":
-        print("Value -", strint)
+        print("Value #10 -", strint)
 
