@@ -17,7 +17,7 @@ print(my_rnd_list2)
 # и их координаты - кортежи (значения), созданные случайным образом с помощью модуля random
 # в диапазоне от -100 до 100 по каждой оси.
 
-# import random
+import random
 
 triangle = {"A": (random.randint(-100, 100),
                   random.randint(-100, 100),
