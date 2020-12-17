@@ -41,14 +41,14 @@ print(triangle)
 # print_stars(my_str)
 # Печатает ***I'm the string***
 
-def print_stars(var_str: str):
-    var_my_str = '***' + var_str + '***'
+def print_stars(var_str):
+    var_my_str = str(f"***{var_str}***")
     print(var_my_str)
     return var_my_str
 
 
-# my_str = "I'm the string"
-my_str = input('Input something:')
+my_str = "I'm the string"
+# my_str = input('Input something:')
 print_stars(my_str)
 
 #####################################################
