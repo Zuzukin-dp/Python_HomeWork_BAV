@@ -6,7 +6,7 @@ with open("/home/bav/python/introPython_BAV/HomeWorks/domains.txt", "r") as doma
     for domain_val in domain_txt:
         domain_val = domain_val.replace(".", "")
         domain_list.append(domain_val.strip())
-print(domain_list)
+# print(domain_list)
 
 # with open("/home/bav/python/introPython_BAV/HomeWorks/domains_2.txt", "w") as domain_2_txt:
 #     domain_2_txt.writelines("\n".join(domain_list))
@@ -21,7 +21,7 @@ with open("/home/bav/python/introPython_BAV/HomeWorks/names.txt", "r") as names_
     for s_name in names_txt:
         s_name = s_name.split()
         names_list.append(s_name[1])
-    print(names_list)
+    # print(names_list)
 
 # with open("/home/bav/python/introPython_BAV/HomeWorks/names_2.txt", "w") as names_2_txt:
 #     names_2_txt.writelines("\n".join(names_list))
