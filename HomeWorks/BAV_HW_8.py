@@ -44,9 +44,10 @@ import string
 
 
 def generate_server_name(min_len=5, max_len=7):
-    # srv_name = "".join(random.choice(list(string.ascii_lowercase)) for _ in range(random.randint(5, 7)))
-    rdm_idx = string.ascii_lowercase
-    srv_name = [random.choice(rdm_idx) for _ in range(random.randint(min_len, max_len))]
+    # srv_name = "".join(random.choice(list(string.ascii_lowercase)) for _ in range(random.randint(min_len, max_len)))
+    srv_name = []
+    for _ in range(random.randint(min_len, max_len)):
+        srv_name.append(random.choice(string.ascii_lowercase))
     srv_name = "".join(srv_name)
     return srv_name
 
@@ -56,9 +57,10 @@ def generate_random_number(min_num=100, max_num=999):
     return rdm_number
 
 
-def domains_from_file_list(domains, wrk_path="HomeWorks"):
-    with open(f"{domains}.txt", "r") as domain_txt:
+def domains_from_file_list(domains, wrk_path="/home/bav/python/introPython_BAV/HomeWorks"):
+    with open(f"{wrk_path}/{domains}.txt", "r") as domain_txt:
         # domain_list = [s_domain.strip().split(".")[-1] for s_domain in domain_txt]
+        domain_list = []
         for domain_val in domain_txt:
             domain_val = domain_val.split(".")[-1]
             domain_list.append(domain_val.strip())
@@ -66,8 +68,8 @@ def domains_from_file_list(domains, wrk_path="HomeWorks"):
         return rdm_domain
 
 
-def names_from_file_list(names, wrk_path="HomeWorks"):
-    with open(f"{names}.txt", "r") as names_txt:
+def names_from_file_list(names, wrk_path="/home/bav/python/introPython_BAV/HomeWorks"):
+    with open(f"{wrk_path}/{names}.txt", "r") as names_txt:
         # names_list = [s_name[1].split() for s_name in names_txt]
         names_list = []
         for s_name in names_txt:
@@ -87,8 +89,8 @@ def generate_email_address(domains, names):
     return gen_email
 
 
-domain, names = "domains", "names"
-e_mail = generate_email_address(domain, names)
+domains, names = "domains", "names"
+e_mail = generate_email_address(domains, names)
 print(e_mail)
 
 #####################################################
