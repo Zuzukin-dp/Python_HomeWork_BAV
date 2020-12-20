@@ -4,7 +4,7 @@
 with open("/home/bav/python/introPython_BAV/HomeWorks/domains.txt", "r") as domain_txt:
     domain_list = []
     for domain_val in domain_txt:
-        domain_val = domain_val.replace(".", "")
+        domain_val = domain_val.split(".")[-1]
         domain_list.append(domain_val.strip())
 # print(domain_list)
 
