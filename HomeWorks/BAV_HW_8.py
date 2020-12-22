@@ -2,10 +2,10 @@
 # Названия интернет доменов сохранить их в виде списка строк (названия сохранить без точки).
 
 with open("/home/bav/python/introPython_BAV/HomeWorks/domains.txt", "r") as domain_txt:
-    domain_list = []
+    domains_list = []
     for domain_val in domain_txt:
         domain_val = domain_val.split(".")[-1]
-        domain_list.append(domain_val.strip())
+        domains_list.append(domain_val.strip())
 # print(domain_list)
 
 # with open("/home/bav/python/introPython_BAV/HomeWorks/domains_2.txt", "w") as domain_2_txt:
@@ -43,7 +43,50 @@ import random
 import string
 
 
-def generate_server_name(min_len=5, max_len=7):
+#
+# def domains_from_file_list(domains, wrk_path="/home/bav/python/introPython_BAV/HomeWorks"):
+#     with open(f"{wrk_path}/{domains}.txt", "r") as domain_txt:
+#         # domain_list = [s_domain.strip().split(".")[-1] for s_domain in domain_txt]
+#         domain_list = []
+#         for domain_val in domain_txt:
+#             domain_val = domain_val.split(".")[-1]
+#             domain_list.append(domain_val.strip())
+#         rdm_domain = random.choice(domain_list)
+#         return rdm_domain
+#
+#
+# def names_from_file_list(names, wrk_path="/home/bav/python/introPython_BAV/HomeWorks"):
+#     with open(f"{wrk_path}/{names}.txt", "r") as names_txt:
+#         # names_list = [s_name[1].split() for s_name in names_txt]
+#         names_list = []
+#         for s_name in names_txt:
+#             s_name = s_name.split()
+#             names_list.append(s_name[1])
+#         rdm_name = random.choice(names_list)
+#         return rdm_name
+
+
+# def generate_email_address(domains, names):
+#     names_ff = names_from_file_list(names)
+#     domains_ff = domains_from_file_list(domains)
+#     rdm_num = generate_random_number()
+#     rdm_srv = generate_server_name()
+#
+#     gen_email = f"{names_ff}.{rdm_num}@{rdm_srv}.{domains_ff}"
+#     return gen_email
+
+
+def domains_from_file_list(domains):
+    rdm_domain = random.choice(domains)
+    return rdm_domain
+
+
+def names_from_file_list(names):
+    rdm_name = random.choice(names)
+    return rdm_name
+
+
+def generate_server_name(min_len, max_len):
     # srv_name = "".join(random.choice(list(string.ascii_lowercase)) for _ in range(random.randint(min_len, max_len)))
     srv_name = []
     for _ in range(random.randint(min_len, max_len)):
@@ -52,45 +95,21 @@ def generate_server_name(min_len=5, max_len=7):
     return srv_name
 
 
-def generate_random_number(min_num=100, max_num=999):
+def generate_random_number(min_num, max_num):
     rdm_number = random.randint(min_num, max_num)
     return rdm_number
 
 
-def domains_from_file_list(domains, wrk_path="/home/bav/python/introPython_BAV/HomeWorks"):
-    with open(f"{wrk_path}/{domains}.txt", "r") as domain_txt:
-        # domain_list = [s_domain.strip().split(".")[-1] for s_domain in domain_txt]
-        domain_list = []
-        for domain_val in domain_txt:
-            domain_val = domain_val.split(".")[-1]
-            domain_list.append(domain_val.strip())
-        rdm_domain = random.choice(domain_list)
-        return rdm_domain
-
-
-def names_from_file_list(names, wrk_path="/home/bav/python/introPython_BAV/HomeWorks"):
-    with open(f"{wrk_path}/{names}.txt", "r") as names_txt:
-        # names_list = [s_name[1].split() for s_name in names_txt]
-        names_list = []
-        for s_name in names_txt:
-            s_name = s_name.split()
-            names_list.append(s_name[1])
-        rdm_name = random.choice(names_list)
-        return rdm_name
-
-
-def generate_email_address(domains, names):
+def generate_email_address(domains, names, min_num=100, max_num=999, min_len=5, max_len=7):
     names_ff = names_from_file_list(names)
     domains_ff = domains_from_file_list(domains)
-    rdm_num = generate_random_number()
-    rdm_srv = generate_server_name()
+    rdm_num = generate_random_number(min_num, max_num)
+    rdm_srv = generate_server_name(min_len, max_len)
 
     gen_email = f"{names_ff}.{rdm_num}@{rdm_srv}.{domains_ff}"
     return gen_email
 
 
-domains, names = "domains", "names"
-e_mail = generate_email_address(domains, names)
+e_mail = generate_email_address(domains_list, names_list)
 print(e_mail)
-
 #####################################################
