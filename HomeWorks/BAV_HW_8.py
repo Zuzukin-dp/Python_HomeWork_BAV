@@ -34,6 +34,7 @@ with open("/home/bav/python/introPython_BAV/HomeWorks/names.txt", "r") as names_
 #
 # >>>miller.249@sgdyyur.com
 
+
 def domains_from_file_list(domains):
     rdm_domain = random.choice(domains)
     return rdm_domain
