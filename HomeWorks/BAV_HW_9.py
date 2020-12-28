@@ -79,10 +79,8 @@ def create_random_txt_data(min_len=100, max_len=1000):
     return " ".join(new_words)
 
 
-txt_data = create_random_txt_data()
+# txt_data = create_random_txt_data()
 # print("TXT", txt_data)
-
-
 
 ######################################################
 # Функция 2. Создает данные для записи в файл json.
@@ -139,7 +137,7 @@ def create_random_dict_js_data(min_quantity=5, max_quantity=20, len_key=5):
     return js_dict
 
 
-json_dict = create_random_dict_js_data()
+# json_dict = create_random_dict_js_data()
 # print("JSON", json_dict)
 
 ######################################################
@@ -167,7 +165,7 @@ def create_random_list_csv_data(min_len=3, max_len=10):
     return csv_list_data
 
 
-csv_list = create_random_list_csv_data()
+# csv_list = create_random_list_csv_data()
 # print(csv_list)
 
 ######################################################
