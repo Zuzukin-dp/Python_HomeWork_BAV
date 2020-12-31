@@ -74,8 +74,6 @@ def create_random_txt_data(min_len=100, max_len=1000):
         else:
             new_word = word
         new_words.append(new_word)
-    # word = txt_line.split()[0]
-    # print(word, replace_last_letter(word))
     return " ".join(new_words)
 
 
@@ -97,11 +95,6 @@ def generate_dict_key(quantity_keys, len_key):
     return dict_key
 
 
-# def create_random_val():
-#     rdm_value = [random.randint(-100, 100), random.random(), bool(random.getrandbits(1))]
-#     return random.choice(rdm_value)
-
-
 def random_int(min_num=-100, max_num=100):
     return random.randint(min_num, max_num)
 
@@ -113,7 +106,7 @@ def random_float():
 def random_bool():
     return bool(random.getrandbits(1))
 
-
+# затрудняюсь реализоать равновероятный выбор значений
 def generate_dict_value(quantity_values):
     # dict_val = [create_random_val() for _ in range(quantity_values)]
     dict_val = []
@@ -160,8 +153,9 @@ def create_sublist(len_list):
 def create_random_list_csv_data(min_len=3, max_len=10):
     len_list = random.randint(min_len, max_len)
     len_sub_list = random.randint(min_len, max_len)
-    sub_list = create_sublist(len_sub_list)
-    csv_list_data = [sub_list for _ in range(len_list)]
+    csv_list_data = [create_sublist(len_sub_list) for _ in range(len_list)]
+    # csv_list_data = [create_sublist(random.randint(min_len, max_len)) for _ in range(random.randint(min_len, max_len))]
+    # для разной длинны m (количества стлбцов)
     return csv_list_data
 
 
