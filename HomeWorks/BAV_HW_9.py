@@ -48,7 +48,8 @@ def replace_text_to_number(word):
 
 
 def replace_first_letter(word):
-    return word.replace(word[0], word[0].upper(), 1)
+    return word.capitalize()
+    # return word.replace(word[0], word[0].upper(), 1)
 
 
 def replace_last_letter(word):
