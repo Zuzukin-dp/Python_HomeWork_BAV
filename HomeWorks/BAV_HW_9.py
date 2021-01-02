@@ -203,6 +203,6 @@ generate_and_write_file("/home/bav/python/introPython_BAV/HomeWorks/test_data.tx
 generate_and_write_file("/home/bav/python/introPython_BAV/HomeWorks/test_data.json")
 generate_and_write_file("/home/bav/python/introPython_BAV/HomeWorks/test_data.csv")
 
-# write_txt_file("/home/bav/python/introPython_BAV/HomeWorks/test_data.txt")
-# write_json_file("/home/bav/python/introPython_BAV/HomeWorks/test_data.json")
-# write_csv_file("/home/bav/python/introPython_BAV/HomeWorks/test_data.csv")
+write_txt_file("/home/bav/python/introPython_BAV/HomeWorks/test_data.txt")
+write_json_file("/home/bav/python/introPython_BAV/HomeWorks/test_data.json")
+write_csv_file("/home/bav/python/introPython_BAV/HomeWorks/test_data.csv")
