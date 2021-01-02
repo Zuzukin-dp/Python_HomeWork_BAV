@@ -34,6 +34,18 @@ def key_sort_by_quantity_words(obj_dict):
     return len(words)
 
 
+dict_json = read_json("data.json")
+
+# print(dict_json)
+sort_by_name = sorted(dict_json, key=key_sort_by_last_name)
+print(sort_by_name)
+sort_by_words = sorted(dict_json, key=key_sort_by_quantity_words)
+print(sort_by_words)
+sort_by_years = sorted(dict_json, key=key_sort_by_years)
+print(sort_by_years)
+
+
+# Функция сохраняет результат сортировки в файл.
 def write_json_file(filename, sort_by):
     dict_json = read_json("data.json")
     with open(filename, "w", encoding="utf-8") as test_json:
@@ -41,16 +53,6 @@ def write_json_file(filename, sort_by):
         json.dump(sort_dict, test_json, ensure_ascii=False, indent=2)
 
 
-dict_json = read_json("data.json")
-
-# print(dict_json)
-# sort_by_name = sorted(dict_json, key=key_sort_by_last_name)
-# print(sort_by_name)
-# sort_by_words = sorted(dict_json, key=key_sort_by_quantity_words)
-# print(sort_by_words)
-sort_by_years = sorted(dict_json, key=key_sort_by_years)
-print(sort_by_years)
-
-write_json_file("/home/bav/python/introPython_BAV/HomeWorks/math_data.json", key_sort_by_last_name)
-# write_json_file("/home/bav/python/introPython_BAV/HomeWorks/math_data.json", key_sort_by_quantity_words)
-# write_json_file("/home/bav/python/introPython_BAV/HomeWorks/math_data.json", key_sort_by_years)
+write_json_file("/home/bav/python/introPython_BAV/HomeWorks/sort_by_last_name_data.json", key_sort_by_last_name)
+write_json_file("/home/bav/python/introPython_BAV/HomeWorks/sort_by_len_data.json", key_sort_by_quantity_words)
+write_json_file("/home/bav/python/introPython_BAV/HomeWorks/sort_by_years_data.json", key_sort_by_years)
