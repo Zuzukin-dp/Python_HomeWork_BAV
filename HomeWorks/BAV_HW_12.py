@@ -44,8 +44,7 @@ def get_list_quotes_by_api(len_list=10):
     return write_csv_file(list_quotes)
 
 
-res = get_list_quotes_by_api()
-# print(res)
+get_list_quotes_by_api(27)
 
 
 # 2. Дан файл authors.txt
