@@ -7,14 +7,14 @@
 # Author, Quote, URL. Если автор не указан, цитату не брать.
 # Перед сохранением в csv, записи отсортировать по автору (в алфавитном порядке).
 import re
-from random import randint as rdm_randint
+from random import randint as random_int
 import csv
 import requests
 
 
 def get_quotes_by_api():
     my_dict = {}
-    params = {"method": "getQuote", "format": "json", "key": rdm_randint(0, 9999), "lang": "ru"}
+    params = {"method": "getQuote", "format": "json", "key": random_int(0, 9999), "lang": "ru"}
     r = requests.get("http://api.forismatic.com/api/1.0/", params=params)
     quote = r.json()
     if quote["quoteAuthor"]:
