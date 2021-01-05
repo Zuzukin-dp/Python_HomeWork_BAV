@@ -11,8 +11,9 @@ import re
 # 4. Написать функцию сортировки по количеству слов в поле "text"
 
 
-# 1. Функция, которая считает данные из файла. Параметр функции - имя файла.
+# 1. Функция, считывает данные из файла. Параметр функции - имя файла.
 def read_json(filename):
+    """ Функция, считывает данные из файла. Параметр функции - имя файла. """
     with open(filename, "r", encoding="utf-8") as json_file:
         data = json.load(json_file)
     return data
@@ -20,6 +21,7 @@ def read_json(filename):
 
 # 2. Функция сортировки данных по ФАМИЛИИ в поле "name" (у тех у кого она есть).
 def key_sort_by_last_name(obj_dict):
+    """ Функция сортировки данных по ФАМИЛИИ в поле name (у тех у кого она есть). """
     last_name = re.findall(r'[A-Za-z]+', obj_dict["name"])
     d_date = last_name[-1]
     return str(d_date)
@@ -27,6 +29,7 @@ def key_sort_by_last_name(obj_dict):
 
 # 3. Функция сортировки по дате смерти из поля "years", с учетом дат до н.э.
 def key_sort_by_years(obj_dict):
+    """ Функция сортировки по дате смерти из поля years, с учетом дат до н.э. """
     l_years = re.findall(r'[0-9]+', obj_dict["years"])
     death_date = -int(l_years[-1]) if "BC" in obj_dict["years"] else int(l_years[-1])
     return death_date
@@ -34,6 +37,7 @@ def key_sort_by_years(obj_dict):
 
 # 4. Функция сортировки по количеству слов в поле "text"
 def key_sort_by_quantity_words(obj_dict):
+    """ Функция сортировки по количеству слов в поле text """
     words = obj_dict["text"].split()
     return len(words)
 
@@ -48,7 +52,7 @@ sort_by_years = sorted(dict_json, key=key_sort_by_years)
 print(sort_by_years)
 
 
-# Функция сохраняет результат сортировки в файл.
+# # Функция сохраняет результат сортировки в файл.
 # def write_json_file(filename, sort_by):
 #     dct_json = read_json("data.json")
 #     with open(filename, "w", encoding="utf-8") as test_json:
