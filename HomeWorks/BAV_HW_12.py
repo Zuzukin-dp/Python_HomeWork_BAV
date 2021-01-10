@@ -9,19 +9,19 @@
 import re
 from datetime import datetime
 import json
-from random import randint as random_int
+import random
 import csv
 import requests
 
 
 def get_quotes_by_api():
-    my_dict = {}
-    params = {"method": "getQuote", "format": "json", "key": random_int(0, 9999), "lang": "ru"}
+    params = {"method": "getQuote", "format": "json", "key": random.randint(0, 9999), "lang": "ru"}
     r = requests.get("http://api.forismatic.com/api/1.0/", params=params)
     quote = r.json()
     if quote["quoteAuthor"]:
-        my_dict["Author"], my_dict["Quote"], my_dict["URL"] =\
-            quote["quoteAuthor"], quote["quoteText"], quote["quoteLink"]
+        my_dict = {"Author": quote["quoteAuthor"],
+                   "Quote": quote["quoteText"],
+                   "URL": quote["quoteLink"]}
         return my_dict
     else:
         return get_quotes_by_api()
