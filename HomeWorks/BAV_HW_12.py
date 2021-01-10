@@ -88,7 +88,7 @@ def generate_dict_from_list(list_name=generate_list_from_txt_file()):
     reg_exp_name = r"[^\d\s-]\D+\s[A-Z]\w+['][s]"
     for values in list_name:
         new_date = "".join(re.findall(reg_exp_date, values))
-        new_name = "".join(re.findall(reg_exp_name, values))
+        new_name = "".join(re.findall(reg_exp_name, values))[:-2]
         new_date = convert_date(new_date)
         my_dict = {"name": new_name,
                    "date": new_date}
@@ -107,4 +107,4 @@ def save_list_to_json_file(filename="HW_12.json"):
         json.dump(my_list_dct, test_json, ensure_ascii=False, indent=2)
 
 
-# save_list_to_json_file()
+save_list_to_json_file()
