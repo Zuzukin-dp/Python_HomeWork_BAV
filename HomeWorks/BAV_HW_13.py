@@ -4,8 +4,7 @@ import random
 #
 # Суть задания - сздать класс EmailGenerator
 #
-# 1. При инициализации класса передавать два параметра -
-# путь к файлу domains.txt и путь к файлу names.txt
+# 1. При инициализации класса передавать два параметра - путь к файлу domains.txt и путь к файлу names.txt
 # Пример:
 # email_generator = EmailGenerator("domains.txt", "names.txt")
 #
@@ -16,8 +15,7 @@ import random
 # self.domains = self.get_domains()
 # self.names = self.get_names()
 #
-# 3. При выводе на печать экземпляра класса вывести количество элементов
-# в атрибутах domains и names
+# 3. При выводе на печать экземпляра класса вывести количество элементов в атрибутах domains и names
 # Пример:
 # print(email_generator)
 # >>>len domains = 8, len names = 34
@@ -81,6 +79,19 @@ pth_domains = "/home/bav/python/introPython_BAV/HomeWorks/domains.txt"
 pth_names = "/home/bav/python/introPython_BAV/HomeWorks/names.txt"
 
 email_generator = EmailGenerator(pth_domains, pth_names)
+#########################################################
+# 3. При выводе на печать экземпляра класса вывести количество элементов в атрибутах domains и names
+# Пример:
+# print(email_generator)
+# >>>len domains = 8, len names = 34
 print(email_generator)
+
+#########################################################
+# 4. Написать метод экземпляра класса generate_email()
+# (описание и реализацию нужно взять из ДЗ №8)
+# Пример:
+# email = email_generator.generate_email()
+# print(email)
+# >>>miller.249@sgdyyur.com
 email = email_generator.generate_email_address()
 print(email)
