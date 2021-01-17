@@ -79,19 +79,7 @@ pth_domains = "/home/bav/python/introPython_BAV/HomeWorks/domains.txt"
 pth_names = "/home/bav/python/introPython_BAV/HomeWorks/names.txt"
 
 email_generator = EmailGenerator(pth_domains, pth_names)
-#########################################################
-# 3. При выводе на печать экземпляра класса вывести количество элементов в атрибутах domains и names
-# Пример:
-# print(email_generator)
-# >>>len domains = 8, len names = 34
 print(email_generator)
 
-#########################################################
-# 4. Написать метод экземпляра класса generate_email()
-# (описание и реализацию нужно взять из ДЗ №8)
-# Пример:
-# email = email_generator.generate_email()
-# print(email)
-# >>>miller.249@sgdyyur.com
 email = email_generator.generate_email_address()
 print(email)
