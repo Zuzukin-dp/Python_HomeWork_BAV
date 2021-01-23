@@ -42,7 +42,7 @@ class Unit:
         if self.health > 0:
             return self.health
         else:
-            return f"{self.name} You died (тут типа играет музыка)"
+            return f"{self.name} You died (тут типа играет музыка из Minecraft~а)"
 
     def reduce_health(self, amount):
         """ Функция уменьшения здоровья, параметр получает колчество урона от оружия"""
